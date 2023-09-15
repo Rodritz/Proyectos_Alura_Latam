@@ -1,0 +1,21 @@
+2023-07-29 12:59:12,466 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-07-29 13:13:54,838 [Worker-15: Remove Repositories] WARN  org.eclipse.jgit.lib.Repository - close() called when useCnt is already zero for Repository[C:\Users\rodri\git\Conversor\.git]
+2023-07-29 14:22:50,410 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-07-29 17:11:54,563 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-07-29 20:21:56,756 [Worker-8: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-07-30 09:51:54,312 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-07-30 10:26:43,630 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-07-30 16:16:40,278 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2023-07-30 17:57:19,106 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-10.0.12; built: 2022-09-14T01:54:40.076Z; git: 408d0139887e27a57b54ed52e2d92a36731a7e88; jvm 17.0.5+8
+2023-07-30 17:57:19,144 [Start Help Server] INFO  o.e.j.s.s.DefaultSessionIdManager - Session workerName=node0
+2023-07-30 17:57:19,188 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@6a872ac4{/help,null,AVAILABLE}
+2023-07-30 17:57:19,233 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@6c63b824{HTTP/1.1, (http/1.1)}{127.0.0.1:56430}
+2023-07-30 17:57:19,303 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started Server@601e6162{STARTING}[10.0.12,sto=0] @6076420ms
+2023-07-30 18:02:35,669 [Worker-53: https://download.eclipse.org/eclipse/updates/4.28/categories/p2.index] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (org.apache.hc.core5.http.NoHttpResponseException) caught when processing request to {s}->https://download.eclipse.org:443
+2023-07-30 18:05:10,041 [Worker-59: https://download.eclipse.org/technology/epp/packages/2023-06/artifacts.jar] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://download.eclipse.org:443
+2023-07-30 18:05:10,174 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped Server@601e6162{STOPPING}[10.0.12,sto=0]
+2023-07-30 18:05:10,182 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@6c63b824{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2023-07-30 18:05:10,293 [Stop Help Server] INFO  o.e.j.server.handler.ContextHandler - Stopped o.e.j.s.ServletContextHandler@6a872ac4{/help,null,STOPPED}
+2023-07-30 18:57:20,124 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-07-30 19:18:45,295 [ModalContext] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://marketplace.eclipse.org:443
+2023-07-30 19:19:00,743 [ModalContext] INFO  o.a.h.c.h.i.c.HttpRequestRetryExec - Recoverable I/O exception (java.net.SocketException) caught when processing request to {s}->https://marketplace.eclipse.org:443

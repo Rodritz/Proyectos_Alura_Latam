@@ -1,0 +1,9 @@
+1691190796150	Rename type 'CreaConexion'
+1691190930491	Move compilation unit
+1691279089691	Extract local variable 'x'
+1691279137123	Extract local variable 'x'
+1691279147985	Extract local variable 'valueOf'
+1691279308089	Extract method 'extracted'
+1691341523591	Rename type 'PersistenciaProducto'
+1691341904453	Rename package 'com.alura.jdbc.persistencia'
+1691342415386	Rename method 'guardarProducto'

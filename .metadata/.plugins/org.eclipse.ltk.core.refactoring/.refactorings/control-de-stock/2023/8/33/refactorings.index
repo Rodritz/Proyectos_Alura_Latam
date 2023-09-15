@@ -1,0 +1,6 @@
+1691367608751	Rename field 'productoDAO'
+1691855977824	Rename local variable 'fila'
+1691859134173	Extract local variable 'int1'
+1691859140236	Extract local variable 'string'
+1691859162901	Rename local variable 'int1'
+1691859194724	Rename local variable 'string'
