@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Page<Medico> findByActivoTrue(Pageable paginacion);
 
-    /*-- el sig metodo no funcionaria solo ya que deberia tener su nombre en ingles y deberia comenzar con FindBy+alguno de los atributos de la clase Medico
+    /* el sig metodo no funcionaria solo ya que deberia tener su nombre en ingles y deberia comenzar con FindBy+alguno de los atributos de la clase Medico
      es por eso que hacemos uso de la anotacio @Query en la que nosotros podemos hacer consultas en la DB */
     /*
     -la consulta se escribe entre comillas triples
