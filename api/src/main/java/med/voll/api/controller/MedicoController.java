@@ -37,8 +37,8 @@ public class MedicoController {
 
     }
 
-    /*//con el sig metodo returnabamos un listado de medicos
-    @GetMapping
+    //con el sig metodo returnabamos un listado de medicos
+    /*@GetMapping
     public List<DatosListadoMedico> listadoMedicos(){
         return medicoRepository.findAll().stream().map(DatosListadoMedico::new).toList();
     }*/

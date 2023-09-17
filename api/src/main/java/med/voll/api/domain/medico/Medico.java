@@ -14,6 +14,7 @@ import med.voll.api.domain.direccion.Direccion;
 @Entity(name = "Medico")
 @Table(name = "medicos")
 public class Medico {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
