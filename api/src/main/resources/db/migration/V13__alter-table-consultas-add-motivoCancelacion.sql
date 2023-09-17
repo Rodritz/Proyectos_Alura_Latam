@@ -1,0 +1,1 @@
+alter table consultas add telefono varchar(20) not null;

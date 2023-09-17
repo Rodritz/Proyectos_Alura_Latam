@@ -1,6 +1,7 @@
 package med.voll.api.infra.errores;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.ValidationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -21,10 +22,22 @@ public class TratadorDeErrores {
         return ResponseEntity.badRequest().body(errores);
     }
 
+    @ExceptionHandler(ValidacionDeIntegridad.class)
+    public ResponseEntity tratarErrorValidacionesDeIntegridad(Exception e){
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity tratarErrorValidacionesDeNegocio(Exception e){
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+
     //para que la respuesta de el error MethodArgumentNotValidException sea mas personalizada y me indique que esta mal,
     // creo un nuevo dto a este mismo nivel
     private record DatosErrorValidacion(String campo, String error){
         public DatosErrorValidacion(FieldError error){
+
             this(error.getField(),error.getDefaultMessage());
         }
     }
