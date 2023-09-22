@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -24,6 +25,7 @@ public class MedicoController {
     private MedicoRepository medicoRepository;
 
     @PostMapping
+    @Operation(summary = "Registra un nuevo medico en la base de datos")
     public ResponseEntity<DatosRespuestaMedico> registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico,
                                                                 UriComponentsBuilder uriComponentsBuilder){
           Medico medico = medicoRepository.save(new Medico(datosRegistroMedico));
@@ -47,6 +49,7 @@ public class MedicoController {
 
     //modificamos el metodo anterior para retornar los datos en paginas
     @GetMapping
+    @Operation(summary = "Obtiene el listado de medicos")
     public ResponseEntity<Page<DatosListadoMedico>>  listadoMedicos(@PageableDefault(page = 0, size = 15, sort = {"id"})Pageable paginacion){
         //return medicoRepository.findAll(paginacion).map(DatosListadoMedico::new); //retorna todos los registros
         //RETURN 200 OK
@@ -64,6 +67,7 @@ public class MedicoController {
 
     @PutMapping
     @Transactional
+    @Operation(summary = "Actualiza los datos de un medico existente")
     public ResponseEntity<DatosRespuestaMedico> actualizarMedico(@RequestBody @Valid DatosActualizarMedico datosActualizarMedico) {
         Medico medico = medicoRepository.getReferenceById(datosActualizarMedico.id());
         medico.actualizarDatos(datosActualizarMedico);
@@ -86,6 +90,7 @@ public class MedicoController {
     //--DELETE LOGIGO--(solo cambia el estado del registro para que no salga listado)
     @DeleteMapping("/{id}")
     @Transactional
+    @Operation(summary = "Elimina un medico registrado a partir del ID- pasa a estado inactivo")
     public ResponseEntity eliminarMedico(@PathVariable Long id) {
         Medico medico = medicoRepository.getReferenceById(id);
         medico.desactivarMedico();
@@ -95,6 +100,7 @@ public class MedicoController {
 
     @PutMapping("/{id}")
     @Transactional
+    @Operation(summary = "Activa un medico registrado a partir del ID - pasa a estado activo")
     public ResponseEntity activarMedico(@PathVariable Long id) {
         Medico medico = medicoRepository.getReferenceById(id);
         medico.activarMedico();
@@ -108,6 +114,7 @@ public class MedicoController {
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Obtiene los datos del medico segun el ID")
     public ResponseEntity<DatosRespuestaMedico> retornaDatosMedico(@PathVariable Long id) {
         Medico medico = medicoRepository.getReferenceById(id);
         DatosRespuestaMedico datosRespuestaMedico = new DatosRespuestaMedico(medico.getId(),

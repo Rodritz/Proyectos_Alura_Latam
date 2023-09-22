@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -23,6 +24,7 @@ public class PacienteController {
     private PacienteRepository pacienteRepository;
 
     @PostMapping
+    @Operation(summary = "Registra un nuevo paciente")
     public ResponseEntity<DatosRespuestaPaciente> registrar(@RequestBody @Valid DatosRegistroPaciente datosRegistroPaciente,
                                                             UriComponentsBuilder uriComponentsBuilder) {
         Paciente paciente = pacienteRepository.save(new Paciente(datosRegistroPaciente));
@@ -37,6 +39,7 @@ public class PacienteController {
     }
 
     @GetMapping
+    @Operation(summary = "Obtiene el listado para los pacientes")
     public ResponseEntity<Page<DatosListadoPaciente>>  listar(@PageableDefault(page = 0, size = 10, sort = {"id"}) Pageable paginacion) {
         //return pacienteRepository.findAll(paginacion).map(DatosListadoPaciente::new);
         //RETURN 200 OK
@@ -45,6 +48,7 @@ public class PacienteController {
 
     @PutMapping
     @Transactional
+    @Operation(summary = "Actualiza las informaciones para el paciente")
     public ResponseEntity<DatosRespuestaPaciente> actualizarPaciente(@RequestBody @Valid DatosActualizacionPaciente datos) {
         Paciente paciente = pacienteRepository.getReferenceById(datos.id());
         paciente.actualizarInformacion(datos);
@@ -58,6 +62,7 @@ public class PacienteController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @Operation(summary = "Elimina un paciente a partir del ID - pasa a estado inactivo")
     public ResponseEntity removerPaciente(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.getReferenceById(id);
         paciente.inactivar();
@@ -67,6 +72,7 @@ public class PacienteController {
 
     @PutMapping("/{id}")
     @Transactional
+    @Operation(summary = "Activa un paciente registrado a partir del ID - pasa a estado activo")
     public ResponseEntity activarPaciente(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.getReferenceById(id);
         paciente.activar();
@@ -81,6 +87,7 @@ public class PacienteController {
 
     @GetMapping("/{id}")
     @Transactional
+    @Operation(summary = "Obtiene los datos del medico segun el ID")
     public ResponseEntity<DatosRespuestaPaciente> retornaDatosPaciente(@PathVariable Long id) {
         Paciente paciente = pacienteRepository.getReferenceById(id);
         DatosRespuestaPaciente datosRespuestaPaciente = new DatosRespuestaPaciente(paciente.getId(), paciente.getNombre(),
