@@ -1,6 +1,6 @@
 Api Rest de clinica medica donde podemos:
 
--login de usuario,
+-loguear un usuario,
 
 -listar medicos y pacientes,
 
