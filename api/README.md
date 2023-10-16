@@ -1,4 +1,5 @@
 Api Rest de clinica medica donde podemos 
+
 -login de usuario
 -listar medicos y pacientes
 -registrar nuevos medicos y pacientes
